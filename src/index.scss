@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: black;
+}
+
+/* .navbar {
+  width: 1210px;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.542);
+} */
+
+main {
+  margin: 20px 6%;
+  position: relative;
+}
+
+.filter-section {
+  width: 1340px;
+  position: relative;
+
+  .filter-container {
+    padding: 5px 5px;
+    border-radius: .6rem;
+    background-color: rgba(171, 192, 255, 0.1);
+    border: 1px dotted #8080806e;
+
+    .btn-filter {
+      margin: 2.5px 5px 2.5px 2.5px;
+      font-size: .9rem;
+      font-weight: bold;
+      color: black;
+      background-color: #ffffff;
+      padding: 10px 15px;
+      border: 1px solid #80808047;
+      border-radius: .5rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+      &:nth-child(1) {
+        background-color: royalblue;
+        color: white;
+        border: none;
+
+        &:hover {
+          background-color: rgb(44, 79, 184);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .add-i {
+        padding-right: 5px;
+      }
+
+      .del-filter {
+        font-size: .9rem;
+        margin-left: 5px;
+        padding: 1.5px 3.5px 0px;
+        border: none;
+        border-radius: 1rem;
+        width: fit-content;
+        background-color: transparent;
+        color: rgb(128, 128, 128);
+
+        &:hover {
+          color: red;
+          background-color: rgba(198, 0, 0, 0.15);
+        }
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .clear-filter-btn {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    font-size: .9rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border: 1px solid #80808047;
+    border-radius: .5rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    &:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.dropdown {
+  width: 320px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #0000004b;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 99;
+  margin-top: -5px;
+  margin-left: 8px;
+  box-shadow: 1px 1px 10px #8383832d;
+
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    background-color: #ffffff22;
+    backdrop-filter: blur(10px);
+    border: none;
+    border-bottom: 1px solid #0000005d;
+    outline: none;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+
+    .tab-btn {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      border-right: 1px solid #0000005d;
+      border-bottom: 1px solid #0000005d;
+    }
+
+    .active-tab {
+      background-color: #000000e5;
+      color: white;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+
+    .menu-items {
+      padding: 10px 14px;
+      font-size: 1rem;
+      color: black;
+      background-color: #ffffff;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      border-bottom: 1px solid #e0e0e0;
+
+      &:nth-last-child(1) {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: rgba(65, 105, 225, 0.2);
+      }
+    }
+
+    p {
+      padding: 12px;
+      font-size: 1rem;
+      color: #e74c3c;
+      text-align: center;
+      background-color: #ffffff;
+      font-weight: 500;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #000000e6;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  }
+}
+
+.menu-back-button {
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  font-size: 1rem;
+  text-align: right;
+  padding: 8px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+.table-title {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.table-container {
+  font-size: .75rem;
+
+  overflow-x: auto;
+}
+
+th {
+  font-size: .8rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+td {
+  font-size: .8rem;
+}
+
+.data-table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 5px 6px;
+  border: 1px solid rgba(128, 128, 128, 0.51);
+  text-align: center;
+}
+
+.data-table th {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.888);
+  font-weight: bold;
+  border: none;
+}
