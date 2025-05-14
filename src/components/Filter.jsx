@@ -7,9 +7,10 @@ function Filter() {
     const AddedFilter = useSelector((state) => state.filter.AddedFilter);
     const dispatch = useDispatch();
 
+    
     return (
         <div className="filter-section">
-            
+
             <section className="filter-container">
                 <button
                     onClick={() => dispatch(toogleDropDown())}

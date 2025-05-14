@@ -86,7 +86,7 @@ const initialState = {
     Metrics: ['Cost per Install (CPI)', 'Installs per Thousand Impressions (IPM)', 'Click Through Rate (CTR)', 'Cost Per Thousand Impressions (CPM)', 'Cost Per Click (CPC)'],
     AddedFilter: [],
     dropStatus: false,
-     activeTab: 'Components', 
+    activeTab: 'Components',
     mockData,
 };
 
@@ -110,20 +110,22 @@ export const FilterSlice = createSlice({
             const isAlreadyAdded = state.AddedFilter.some(
                 (item) => item.componentName === componentName && item.value === value
             );
+
             if (!isAlreadyAdded) {
                 state.AddedFilter.push({ componentName, value });
-            }
+               
+            } 
 
             state.dropStatus = false;
         }
         ,
         clearAllFilters: (state) => {
             state.AddedFilter = [];
-        },
+        }
     },
 });
 
-export const { deleteFilter, toogleDropDown, addFilter, clearAllFilters } = FilterSlice.actions;
+export const { deleteFilter, toogleDropDown, addFilter, clearAllFilters, clearPopupMessage } = FilterSlice.actions;
 export const FilterReducer = FilterSlice.reducer;
 
 

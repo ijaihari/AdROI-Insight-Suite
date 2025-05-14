@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilter } from "../store/FilterSlice";
-
 function MenuList({ activeTab, searchTerm }) {
     const dispatch = useDispatch();
     const { Components, Tags, Metrics } = useSelector((state) => state.filter);
 
+
+  
     const tabMap = {
         Components,
         Tags,
