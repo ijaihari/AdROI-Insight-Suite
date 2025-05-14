@@ -2,7 +2,7 @@ function Header() {
     return (
         <header>
             <nav className="navbar">
-                <h1 className="logo">AdROI Insight Suite</h1>
+                <h1 className="logo"><span>ROAS</span> Insight Suite</h1>
             </nav>
         </header>
     );
