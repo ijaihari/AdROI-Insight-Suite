@@ -4,7 +4,7 @@ function Header() {
     return (
         <header>
             <nav className="navbar">
-                <h1 className="logo"><span>ROAS</span> Insight Suite</h1>
+                <Link to= "/"><h1 className="logo">ROAS Insight Suite</h1></Link>
                 <section className="nav-tabs">
                     <Link to="/" ><button>Home</button></Link>
                     <Link to="/console" ><button>Console</button></Link>
