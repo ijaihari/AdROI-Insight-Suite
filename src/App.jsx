@@ -1,5 +1,6 @@
 import Filter from "./components/Filter";
 import FilteredTable from "./components/FilteredTable";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Filter />
         <FilteredTable />
       </main>
+      <Footer/>
     </div>
   );
 

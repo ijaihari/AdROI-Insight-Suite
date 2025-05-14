@@ -344,7 +344,7 @@ export const mockData = [
         cost_per_install: 1.19,
         installs: 410
     },
-    /* {
+    {
         creative_id: "CR016",
         creative_name: "Flash Frenzy Reel",
         Tags: [
@@ -688,5 +688,5 @@ export const mockData = [
         Cost_Per_Click: 0.43,
         cost_per_install: 1.14,
         installs: 446
-    } */
+    } 
 ]

@@ -17,30 +17,74 @@ button {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: black;
-
 }
 
 .navbar {
-  width: 1340px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
   position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0px;
   z-index: 10;
-  background-color: #ffffffa5;
+  background-color: #ffffffb6;
   backdrop-filter: blur(10px);
-  border-radius: 50px;
-  border: 1px solid rgba(128, 128, 128, 0.352);
-  padding: 10px 10px 12px 40px;
+  border: 1px solid rgba(128, 128, 128, 0.225);
+  padding: 10px 0px 10px 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.059);
+}
+
+.nav-tabs {
+  display: flex;
+
+  button {
+    color: black;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: white;
+      border: 1px solid #0000005f;
+    }
+  }
+}
+
+.login {
+  button {
+    font-size: 1rem;
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid #00000018;
+    padding: 10px 0px;
+
+    &:nth-child(1) {
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0px 10px 10px 0px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: #000000e5;
+    }
+  }
+
 }
 
 main {
   margin: 100px 6%;
   position: relative;
+  min-height: 100vh;
 }
 
 .filter-section {
@@ -48,10 +92,11 @@ main {
   position: relative;
 
   .filter-container {
-    padding: 5px 5px;
+    padding: 7px 9px;
     border-radius: .6rem;
-    background-color: rgba(171, 192, 255, 0.1);
+    background-color: rgba(251, 252, 255, 0.1);
     border: 1px dotted #8080806e;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
 
     .btn-filter {
       margin: 2.5px 5px 2.5px 2.5px;
@@ -65,9 +110,9 @@ main {
       font-family: "Plus Jakarta Sans", sans-serif;
 
       &:nth-child(1) {
+        border: 1px solid royalblue;
         background-color: royalblue;
         color: white;
-        border: none;
 
         &:hover {
           background-color: rgb(44, 79, 184);
@@ -103,7 +148,7 @@ main {
 
   .clear-filter-btn {
     position: absolute;
-    top: 7px;
+    top: 9px;
     right: 10px;
     font-size: .9rem;
     font-weight: bold;
@@ -222,7 +267,7 @@ main {
 
 .menu-back-button {
   background-color: #ffffff;
-  color: black;
+  color: #000000e5;
   border: none;
   font-size: 1rem;
   text-align: right;
@@ -235,6 +280,7 @@ main {
 }
 
 .table-title {
+  color: 000000e5;
   margin-top: 1rem;
   font-size: 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -259,6 +305,7 @@ td {
   margin-top: 1rem;
   width: 100%;
   border-collapse: collapse;
+  background-color: transparent;
 }
 
 .data-table th,
@@ -270,7 +317,9 @@ td {
 
 .data-table th {
   color: white;
-  background-color: rgba(0, 0, 0, 0.888);
+  background-color: #000000e5;
   font-weight: bold;
   border: none;
 }
+
+//footer
