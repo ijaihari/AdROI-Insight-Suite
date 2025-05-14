@@ -82,11 +82,14 @@ button {
 }
 
 main {
-  margin: 100px 6%;
-  position: relative;
   min-height: 100vh;
+  margin: 100px 6%;
 }
 
+/* .console{
+  margin: 100px 6%;
+}
+ */
 .filter-section {
   width: 1340px;
   position: relative;
@@ -323,7 +326,7 @@ td {
 
 //footer
 .footer {
- 
+
   background-color: #000000ec;
   color: white;
   padding: 3rem 1rem;
@@ -338,7 +341,7 @@ td {
   }
 
   &__title {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -346,21 +349,21 @@ td {
   }
 
   &__description {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 0.9rem;
     line-height: 1.6;
     color: #c5c5c5;
   }
 
   &__list {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
   &__link {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     display: block;
     color: #c5c5c5;
     font-size: 0.9rem;
@@ -374,7 +377,7 @@ td {
   }
 
   &__form {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     margin-top: 1rem;
 
@@ -400,7 +403,7 @@ td {
   }
 
   &__button {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     padding: 0.5rem 1rem;
     border: none;
     background-color: white;
@@ -421,7 +424,7 @@ td {
   }
 
   &__bottom {
-    
+
     border-top: 1px solid rgba(128, 128, 128, 0.144);
     padding-top: 1.5rem;
     max-width: 1200px;
@@ -439,14 +442,14 @@ td {
   }
 
   &__bottom-links {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
 
     a {
-       font-family: "Plus Jakarta Sans", sans-serif;
+      font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 0.85rem;
       color: white;
     }
@@ -456,7 +459,7 @@ td {
 .footer__copyright {
 
   a {
-     font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: white;
     text-decoration: none;
 
