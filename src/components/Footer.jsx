@@ -1,4 +1,3 @@
-
 function Footer() {
     return (
         <footer className="footer">
@@ -44,7 +43,7 @@ function Footer() {
 
             <div className="footer__bottom">
                 <p className="footer__copyright">
-                    &copy; {new Date().getFullYear()} ROAS Insight Suite. All rights reserved.
+                    &copy; {new Date().getFullYear()} ROAS Insight Suite. All rights reserved. A project by <a href="https://www.linkedin.com/in/ijaihari/">Jai Hari Nataraj</a>
                 </p>
                 <div className="footer__bottom-links">
                     <a href="#" className="footer__link">Privacy Policy</a>
