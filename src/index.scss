@@ -112,7 +112,7 @@ main {
       font-size: .9rem;
       font-weight: bold;
       color: black;
-      background-color: #ffffff;
+      background-color: #ffffff95;
       padding: 10px 15px;
       border: 1px solid #80808047;
       border-radius: .5rem;
@@ -162,7 +162,7 @@ main {
     font-size: .9rem;
     font-weight: bold;
     color: black;
-    background-color: white;
+    background-color: #ffffff95;
     padding: 10px 15px;
     border: 1px solid #80808047;
     border-radius: .5rem;
@@ -301,7 +301,7 @@ main {
   font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
   width: 100%;
-  padding: 10px 5px;
+  padding: 15px 5px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.185);
   border: 1px dotted #8080803e;
@@ -310,8 +310,8 @@ main {
 
 .active-filter {
   border: 1px solid #8080803c;
-  background-color: white;
-  padding: 5px 10px;
+  background-color: #ffffff95;
+  padding: 10px 10px;
   border-radius: 5px;
 }
 
