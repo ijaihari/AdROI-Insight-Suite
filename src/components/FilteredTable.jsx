@@ -38,6 +38,18 @@ function FilteredTable() {
         <div className="table-container">
             <section className="table-tools">
                 <span className="active-filter">{title}</span>
+                {/* <section className="search-sort">
+                    <input type="text" />
+                    <button>Sort by</button>
+                </section> */}
+                <section className="data-view">
+                    <button><span class="material-symbols-outlined">
+                        view_module
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        table
+                    </span></button>
+                </section>
             </section>
 
             {filteredData.length > 0 ? (

@@ -295,29 +295,59 @@ main {
 }
 
 .table-tools {
-  color: 000000e5;
+  color: #000000e5;
   margin-top: 1rem;
   font-size: 1.3rem;
   font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
   width: 100%;
-  padding: 15px 5px;
+  padding: 5px 5px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.185);
   border: 1px dotted #8080803e;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .active-filter {
   border: 1px solid #8080803c;
   background-color: #ffffff95;
-  padding: 10px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
 .table-container {
   font-size: .75rem;
   overflow-x: auto;
+}
+
+.data-view {
+  button {
+    border: 1px solid rgba(128, 128, 128, 0.214);
+    background-color: #ffffff95;
+    padding: 7px 7px 3px 7px;
+
+    &:nth-child(1) {
+      border-right: none;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0px 05px 05px 0px;
+    }
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #000000e0;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
 }
 
 th {
