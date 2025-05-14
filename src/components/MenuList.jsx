@@ -1,80 +1,77 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilter } from "../store/FilterSlice";
+
 function MenuList({ activeTab, searchTerm }) {
     const dispatch = useDispatch();
     const { Components, Tags, Metrics } = useSelector((state) => state.filter);
 
+    const generateRandomId = () => Math.floor(100000 + Math.random() * 900000);
 
-  
-    const tabMap = {
-        Components,
-        Tags,
-        Metrics
-    };
-
+    const tabMap = { Components, Tags, Metrics };
     const data = tabMap[activeTab] || [];
-
     const isComponentTab = activeTab === "Components";
 
     const [selectedComponent, setSelectedComponent] = useState(null);
 
-    const handleBack = () => {
-        setSelectedComponent(null);
-    };
+    const handleBack = () => setSelectedComponent(null);
 
-    const handleComponentClick = (component) => {
-        setSelectedComponent(component);
+    const handleComponentClick = (component) => setSelectedComponent(component);
+
+    // Now accepts keyName for Components, activeTab for Tags/Metrics
+    const handleAddFilter = (componentName, value) => {
+        const payload = {
+            componentName,
+            value,
+            id: generateRandomId()
+        };
+        console.log("Dispatching:", payload);
+        dispatch(addFilter(payload));
     };
 
     const renderMainList = () => {
         if (isComponentTab) {
-            // Render component.name list
-            const filtered = data.filter(component =>
+            const filteredComponents = data.filter((component) =>
                 component.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
 
-            return filtered.length > 0 ? (
-                filtered.map((component, index) => (
+            return filteredComponents.length > 0 ? (
+                filteredComponents.map((component, index) => (
                     <button
                         key={index}
                         onClick={() => handleComponentClick(component)}
                         className="menu-items"
                     >
-                        {component.name} {/* Render component name as string */}
-                    </button>
-                ))
-            ) : (
-                <p className="no-results">No results found</p>
-            );
-        } else {
-            // Render plain strings for Tags / Metrics
-            const filtered = data.filter(item =>
-                item.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-
-            return filtered.length > 0 ? (
-                filtered.map((item, index) => (
-                    <button
-                        key={index}
-                        onClick={() => {
-                            // Dispatching the filter with componentName and value
-                            console.log("Dispatching:", { componentName: activeTab, value: item });
-                            dispatch(addFilter({ componentName: activeTab, value: item }));
-                        }}
-                        className="menu-items"
-                    >
-                        {item} {/* Render item as string */}
+                        {component.name}
                     </button>
                 ))
             ) : (
                 <p className="no-results">No results found</p>
             );
         }
+
+        // For Tags and Metrics
+        const filteredItems = data.filter((item) =>
+            item.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        return filteredItems.length > 0 ? (
+            filteredItems.map((item, index) => (
+                <button
+                    key={index}
+                    onClick={() => handleAddFilter(activeTab, item)}
+                    className="menu-items"
+                >
+                    {item}
+                </button>
+            ))
+        ) : (
+            <p className="no-results">No results found</p>
+        );
     };
 
     const renderSubList = () => {
-        const filteredOptions = selectedComponent.options.filter(option =>
+        const filteredOptions = selectedComponent.options.filter((option) =>
             option.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
@@ -87,13 +84,10 @@ function MenuList({ activeTab, searchTerm }) {
                     filteredOptions.map((option, index) => (
                         <button
                             key={index}
-                            onClick={() => {
-                                console.log("Dispatching:", { componentName: activeTab, value: option });
-                                dispatch(addFilter({ componentName: activeTab, value: option }));
-                            }}
+                            onClick={() => handleAddFilter(selectedComponent.keyName, option)}
                             className="menu-items"
                         >
-                            {option} {/* Render option as string */}
+                            {option}
                         </button>
                     ))
                 ) : (

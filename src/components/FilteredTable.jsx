@@ -1,35 +1,45 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { data, useParams } from "react-router-dom";
+import { setDataCount } from "../store/FilterSlice";
 
 function FilteredTable() {
-    const { mockData, AddedFilter } = useSelector(state => state.filter);
+    const dispatch = useDispatch();
+    const { mockData, AddedFilter, dataCount } = useSelector(state => state.filter);
     console.log(AddedFilter);
+    const { id } = useParams();
 
-    // Create a mapping from component names to selected values
+    function useTableTitle(id) {
+        const AddedFilter = useSelector((state) => state.filter.AddedFilter);
+        const filter = AddedFilter.find((filter) => filter.id === Number(id));
+        return filter ? `Filter: ${filter.value} (${dataCount})` : "Insight Table";
+    }
+    const title = useTableTitle(id);
 
-    /*  const filterMap = {};
-     AddedFilter.forEach(({ componentName, value }) => {
-         filterMap[componentName] = value;
-     });
-     console.log(filterMap) */
+    let filteredData = mockData;
+    if (AddedFilter.length > 0 && id) {
+        const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
+        console.log(activeFilter)
 
-    // Filter logic
-    const filteredData = AddedFilter.length === 0
-        ? mockData // No filter, show everything
-        : mockData
+        if (activeFilter) {
+            const { componentName, value } = activeFilter;
 
-        /* mockData.filter(item =>
-            Object.entries(filterMap).every(([key, val]) => {
-                if (key === 'Tags') {
-                    // Check if any of the selected tags are present in the item
-                    return item[key].some(tag => val.includes(tag)); // Matching any tag
-                }
-                return item[key] === val;
-            })
-        ) */;
+            filteredData = mockData.filter(item => item[componentName] == value);
+            console.log(filteredData)
+            dispatch(setDataCount(filteredData.length));
+        }
+        else {
+            filteredData = mockData;
+            dispatch(setDataCount(filteredData.length));
+        }
+
+    }
 
     return (
         <div className="table-container">
-            <h2 className="table-title">Insight Table</h2>
+            <section className="table-tools">
+                <span className="active-filter">{title}</span>
+            </section>
+
             {filteredData.length > 0 ? (
                 <table className="data-table">
                     <thead>

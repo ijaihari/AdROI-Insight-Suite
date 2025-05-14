@@ -157,7 +157,7 @@ main {
 
   .clear-filter-btn {
     position: absolute;
-    top: 9px;
+    top: 10px;
     right: 10px;
     font-size: .9rem;
     font-weight: bold;
@@ -294,16 +294,29 @@ main {
   }
 }
 
-.table-title {
+.table-tools {
   color: 000000e5;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.185);
+  border: 1px dotted #8080803e;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+}
+
+.active-filter {
+  border: 1px solid #8080803c;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .table-container {
   font-size: .75rem;
-
   overflow-x: auto;
 }
 
@@ -335,6 +348,9 @@ td {
   background-color: #000000e5;
   font-weight: normal;
 }
+
+
+
 
 //footer
 .footer {
