@@ -61,7 +61,7 @@ function MenuList({ activeTab, searchTerm }) {
             filteredItems.map((option, index) => (
                 <button
                     key={index}
-                    onClick={() => handleAddFilter(option, option)}
+                    onClick={() => handleAddFilter(activeTab, option)}
                     className="menu-items"
                 >
                     {option}

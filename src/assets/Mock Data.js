@@ -16,11 +16,11 @@ export const mockData = [
         CTR: 1.2,
         Spend: 500,
         Impressions: 100000,
-        clicks: 1200,
-        cpm: 5,
-        Cost_Per_Click: 0.42,
-        cost_per_install: 1.15,
-        installs: 435
+        Clicks: 1200,
+        CPM: 5,
+        CPC: 0.42,
+        CPI: 1.15,
+        Installs: 435
     },
     {
         creative_id: "CR002",
@@ -39,11 +39,11 @@ export const mockData = [
         CTR: 1.8,
         Spend: 720,
         Impressions: 120000,
-        clicks: 2160,
-        cpm: 6,
-        Cost_Per_Click: 0.33,
-        cost_per_install: 0.85,
-        installs: 845
+        Clicks: 2160,
+        CPM: 6,
+        CPC: 0.33,
+        CPI: 0.85,
+        Installs: 845
     },
     {
         creative_id: "CR003",
@@ -62,11 +62,11 @@ export const mockData = [
         CTR: 0.9,
         Spend: 310,
         Impressions: 80000,
-        clicks: 720,
-        cpm: 3.87,
-        Cost_Per_Click: 0.43,
-        cost_per_install: 1.34,
-        installs: 231
+        Clicks: 720,
+        CPM: 3.87,
+        CPC: 0.43,
+        CPI: 1.34,
+        Installs: 231
     },
     {
         creative_id: "CR004",
@@ -85,11 +85,11 @@ export const mockData = [
         CTR: 2.1,
         Spend: 900,
         Impressions: 150000,
-        clicks: 3150,
-        cpm: 6,
-        Cost_Per_Click: 0.29,
-        cost_per_install: 0.95,
-        installs: 947
+        Clicks: 3150,
+        CPM: 6,
+        CPC: 0.29,
+        CPI: 0.95,
+        Installs: 947
     },
     {
         creative_id: "CR005",
@@ -108,11 +108,11 @@ export const mockData = [
         CTR: 1,
         Spend: 450,
         Impressions: 90000,
-        clicks: 900,
-        cpm: 5,
-        Cost_Per_Click: 0.5,
-        cost_per_install: 1.2,
-        installs: 375
+        Clicks: 900,
+        CPM: 5,
+        CPC: 0.5,
+        CPI: 1.2,
+        Installs: 375
     },
     {
         creative_id: "CR006",
@@ -131,11 +131,11 @@ export const mockData = [
         CTR: 1.7,
         Spend: 620,
         Impressions: 110000,
-        clicks: 1870,
-        cpm: 5.63,
-        Cost_Per_Click: 0.33,
-        cost_per_install: 0.97,
-        installs: 640
+        Clicks: 1870,
+        CPM: 5.63,
+        CPC: 0.33,
+        CPI: 0.97,
+        Installs: 640
     },
     {
         creative_id: "CR007",
@@ -154,11 +154,11 @@ export const mockData = [
         CTR: 2.5,
         Spend: 1000,
         Impressions: 130000,
-        clicks: 3250,
-        cpm: 7.69,
-        Cost_Per_Click: 0.31,
-        cost_per_install: 0.89,
-        installs: 1124
+        Clicks: 3250,
+        CPM: 7.69,
+        CPC: 0.31,
+        CPI: 0.89,
+        Installs: 1124
     },
     {
         creative_id: "CR008",
@@ -177,11 +177,11 @@ export const mockData = [
         CTR: 0.8,
         Spend: 270,
         Impressions: 60000,
-        clicks: 480,
-        cpm: 4.5,
-        Cost_Per_Click: 0.56,
-        cost_per_install: 1.38,
-        installs: 195
+        Clicks: 480,
+        CPM: 4.5,
+        CPC: 0.56,
+        CPI: 1.38,
+        Installs: 195
     },
     {
         creative_id: "CR009",
@@ -200,11 +200,11 @@ export const mockData = [
         CTR: 1.5,
         Spend: 500,
         Impressions: 100000,
-        clicks: 1500,
-        cpm: 5,
-        Cost_Per_Click: 0.33,
-        cost_per_install: 0.8,
-        installs: 625
+        Clicks: 1500,
+        CPM: 5,
+        CPC: 0.33,
+        CPI: 0.8,
+        Installs: 625
     },
     {
         creative_id: "CR010",
@@ -223,11 +223,11 @@ export const mockData = [
         CTR: 1.4,
         Spend: 720,
         Impressions: 105000,
-        clicks: 1470,
-        cpm: 6.86,
-        Cost_Per_Click: 0.49,
-        cost_per_install: 1.05,
-        installs: 410
+        Clicks: 1470,
+        CPM: 6.86,
+        CPC: 0.49,
+        CPI: 1.05,
+        Installs: 410
     },
     {
         creative_id: "CR011",
@@ -246,11 +246,11 @@ export const mockData = [
         CTR: 1.7,
         Spend: 650,
         Impressions: 95000,
-        clicks: 1615,
-        cpm: 6.84,
-        Cost_Per_Click: 0.4,
-        cost_per_install: 1.05,
-        installs: 620
+        Clicks: 1615,
+        CPM: 6.84,
+        CPC: 0.4,
+        CPI: 1.05,
+        Installs: 620
     },
     {
         creative_id: "CR012",
@@ -269,11 +269,11 @@ export const mockData = [
         CTR: 1.5,
         Spend: 780,
         Impressions: 110000,
-        clicks: 1650,
-        cpm: 7.09,
-        Cost_Per_Click: 0.47,
-        cost_per_install: 1.18,
-        installs: 495
+        Clicks: 1650,
+        CPM: 7.09,
+        CPC: 0.47,
+        CPI: 1.18,
+        Installs: 495
     },
     {
         creative_id: "CR013",
@@ -292,11 +292,11 @@ export const mockData = [
         CTR: 2,
         Spend: 690,
         Impressions: 115000,
-        clicks: 2300,
-        cpm: 6,
-        Cost_Per_Click: 0.3,
-        cost_per_install: 0.82,
-        installs: 860
+        Clicks: 2300,
+        CPM: 6,
+        CPC: 0.3,
+        CPI: 0.82,
+        Installs: 860
     },
     {
         creative_id: "CR014",
@@ -315,11 +315,11 @@ export const mockData = [
         CTR: 2.3,
         Spend: 880,
         Impressions: 140000,
-        clicks: 3220,
-        cpm: 6.29,
-        Cost_Per_Click: 0.27,
-        cost_per_install: 0.91,
-        installs: 970
+        Clicks: 3220,
+        CPM: 6.29,
+        CPC: 0.27,
+        CPI: 0.91,
+        Installs: 970
     },
     {
         creative_id: "CR015",
@@ -338,11 +338,11 @@ export const mockData = [
         CTR: 1,
         Spend: 490,
         Impressions: 88000,
-        clicks: 880,
-        cpm: 5.57,
-        Cost_Per_Click: 0.56,
-        cost_per_install: 1.19,
-        installs: 410
+        Clicks: 880,
+        CPM: 5.57,
+        CPC: 0.56,
+        CPI: 1.19,
+        Installs: 410
     },
     {
         creative_id: "CR016",
@@ -361,11 +361,11 @@ export const mockData = [
         CTR: 1.6,
         Spend: 630,
         Impressions: 108000,
-        clicks: 1728,
-        cpm: 5.83,
-        Cost_Per_Click: 0.36,
-        cost_per_install: 1,
-        installs: 630
+        Clicks: 1728,
+        CPM: 5.83,
+        CPC: 0.36,
+        CPI: 1,
+        Installs: 630
     },
     {
         creative_id: "CR017",
@@ -384,11 +384,11 @@ export const mockData = [
         CTR: 2.6,
         Spend: 1020,
         Impressions: 134000,
-        clicks: 3484,
-        cpm: 7.61,
-        Cost_Per_Click: 0.29,
-        cost_per_install: 0.86,
-        installs: 1185
+        Clicks: 3484,
+        CPM: 7.61,
+        CPC: 0.29,
+        CPI: 0.86,
+        Installs: 1185
     },
     {
         creative_id: "CR018",
@@ -407,11 +407,11 @@ export const mockData = [
         CTR: 0.9,
         Spend: 260,
         Impressions: 58000,
-        clicks: 522,
-        cpm: 4.48,
-        Cost_Per_Click: 0.5,
-        cost_per_install: 1.35,
-        installs: 193
+        Clicks: 522,
+        CPM: 4.48,
+        CPC: 0.5,
+        CPI: 1.35,
+        Installs: 193
     },
     {
         creative_id: "CR019",
@@ -430,11 +430,11 @@ export const mockData = [
         CTR: 1.3,
         Spend: 540,
         Impressions: 97000,
-        clicks: 1261,
-        cpm: 5.57,
-        Cost_Per_Click: 0.43,
-        cost_per_install: 0.95,
-        installs: 570
+        Clicks: 1261,
+        CPM: 5.57,
+        CPC: 0.43,
+        CPI: 0.95,
+        Installs: 570
     },
     {
         creative_id: "CR020",
@@ -453,11 +453,11 @@ export const mockData = [
         CTR: 1.1,
         Spend: 470,
         Impressions: 94000,
-        clicks: 1034,
-        cpm: 5,
-        Cost_Per_Click: 0.45,
-        cost_per_install: 1.1,
-        installs: 426
+        Clicks: 1034,
+        CPM: 5,
+        CPC: 0.45,
+        CPI: 1.1,
+        Installs: 426
     },
     {
         creative_id: "CR021",
@@ -476,11 +476,11 @@ export const mockData = [
         CTR: 1.4,
         Spend: 600,
         Impressions: 90000,
-        clicks: 1260,
-        cpm: 6.67,
-        Cost_Per_Click: 0.48,
-        cost_per_install: 1.22,
-        installs: 492
+        Clicks: 1260,
+        CPM: 6.67,
+        CPC: 0.48,
+        CPI: 1.22,
+        Installs: 492
     },
     {
         creative_id: "CR022",
@@ -499,11 +499,11 @@ export const mockData = [
         CTR: 1.6,
         Spend: 720,
         Impressions: 110000,
-        clicks: 1760,
-        cpm: 6.55,
-        Cost_Per_Click: 0.41,
-        cost_per_install: 1.08,
-        installs: 520
+        Clicks: 1760,
+        CPM: 6.55,
+        CPC: 0.41,
+        CPI: 1.08,
+        Installs: 520
     },
     {
         creative_id: "CR023",
@@ -522,11 +522,11 @@ export const mockData = [
         CTR: 1.9,
         Spend: 680,
         Impressions: 97000,
-        clicks: 1843,
-        cpm: 7.01,
-        Cost_Per_Click: 0.37,
-        cost_per_install: 0.91,
-        installs: 746
+        Clicks: 1843,
+        CPM: 7.01,
+        CPC: 0.37,
+        CPI: 0.91,
+        Installs: 746
     },
     {
         creative_id: "CR024",
@@ -545,11 +545,11 @@ export const mockData = [
         CTR: 2.1,
         Spend: 900,
         Impressions: 145000,
-        clicks: 3045,
-        cpm: 6.21,
-        Cost_Per_Click: 0.3,
-        cost_per_install: 0.97,
-        installs: 930
+        Clicks: 3045,
+        CPM: 6.21,
+        CPC: 0.3,
+        CPI: 0.97,
+        Installs: 930
     },
     {
         creative_id: "CR025",
@@ -568,11 +568,11 @@ export const mockData = [
         CTR: 1.1,
         Spend: 540,
         Impressions: 87000,
-        clicks: 957,
-        cpm: 6.21,
-        Cost_Per_Click: 0.56,
-        cost_per_install: 1.33,
-        installs: 405
+        Clicks: 957,
+        CPM: 6.21,
+        CPC: 0.56,
+        CPI: 1.33,
+        Installs: 405
     },
     {
         creative_id: "CR026",
@@ -591,11 +591,11 @@ export const mockData = [
         CTR: 2.2,
         Spend: 790,
         Impressions: 112000,
-        clicks: 2464,
-        cpm: 7.05,
-        Cost_Per_Click: 0.32,
-        cost_per_install: 0.88,
-        installs: 900
+        Clicks: 2464,
+        CPM: 7.05,
+        CPC: 0.32,
+        CPI: 0.88,
+        Installs: 900
     },
     {
         creative_id: "CR027",
@@ -614,11 +614,11 @@ export const mockData = [
         CTR: 1.3,
         Spend: 430,
         Impressions: 86000,
-        clicks: 1118,
-        cpm: 5,
-        Cost_Per_Click: 0.38,
-        cost_per_install: 1.12,
-        installs: 384
+        Clicks: 1118,
+        CPM: 5,
+        CPC: 0.38,
+        CPI: 1.12,
+        Installs: 384
     },
     {
         creative_id: "CR028",
@@ -637,11 +637,11 @@ export const mockData = [
         CTR: 1.8,
         Spend: 640,
         Impressions: 102000,
-        clicks: 1836,
-        cpm: 6.27,
-        Cost_Per_Click: 0.35,
-        cost_per_install: 0.92,
-        installs: 700
+        Clicks: 1836,
+        CPM: 6.27,
+        CPC: 0.35,
+        CPI: 0.92,
+        Installs: 700
     },
     {
         creative_id: "CR029",
@@ -660,11 +660,11 @@ export const mockData = [
         CTR: 2.4,
         Spend: 980,
         Impressions: 136000,
-        clicks: 3264,
-        cpm: 7.21,
-        Cost_Per_Click: 0.3,
-        cost_per_install: 0.89,
-        installs: 1100
+        Clicks: 3264,
+        CPM: 7.21,
+        CPC: 0.3,
+        CPI: 0.89,
+        Installs: 1100
     },
     {
         creative_id: "CR030",
@@ -683,10 +683,10 @@ export const mockData = [
         CTR: 1.2,
         Spend: 510,
         Impressions: 98000,
-        clicks: 1176,
-        cpm: 5.2,
-        Cost_Per_Click: 0.43,
-        cost_per_install: 1.14,
-        installs: 446
+        Clicks: 1176,
+        CPM: 5.2,
+        CPC: 0.43,
+        CPI: 1.14,
+        Installs: 446
     } 
 ]

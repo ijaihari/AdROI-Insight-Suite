@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { setDataCount } from "../store/FilterSlice";
-const navigate = useNavigate()
+import { useEffect, useMemo } from "react";
+
 function FilteredTable() {
     const dispatch = useDispatch();
     const { mockData, AddedFilter, dataCount } = useSelector(state => state.filter);
-    console.log(AddedFilter);
     const { id } = useParams();
 
     function useTableTitle(id) {
@@ -15,42 +15,39 @@ function FilteredTable() {
     }
     const title = useTableTitle(id);
 
-    let filteredData = mockData;
+    // Memoize filteredData so it's recalculated only when dependencies change
+    const filteredData = useMemo(() => {
+        if (AddedFilter.length > 0 && id) {
+            const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
+            console.log(activeFilter);
 
-    if (AddedFilter.length > 0 && id) {
-        const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
-        console.log(activeFilter)
+            if (activeFilter) {
+                const { componentName, value } = activeFilter;
 
-        if (activeFilter) {
-            const { componentName, value } = activeFilter;
-
-            filteredData = mockData.filter(item => item[componentName] == value);
-            console.log(filteredData)
-            navigate(`/filtered/${id}`)
-            dispatch(setDataCount(filteredData.length));
+                return mockData.filter(item => {
+                    if (componentName.toLowerCase() === "tags") {
+                        return Array.isArray(item.Tags) && item.Tags.includes(value);
+                    }
+                   
+                    return item[componentName] === value;
+                });
+            }
         }
-        else {
-            filteredData = mockData;
-            dispatch(setDataCount(filteredData.length));
-        }
+        return mockData;
+    }, [AddedFilter, id, mockData]);
 
-    }
+    // Dispatch setDataCount whenever filteredData changes
+    useEffect(() => {
+        dispatch(setDataCount(filteredData.length));
+    }, [filteredData, dispatch]);
 
     return (
         <div className="table-container">
             <section className="table-tools">
                 <span className="active-filter">{title}</span>
-                {/* <section className="search-sort">
-                    <input type="text" />
-                    <button>Sort by</button>
-                </section> */}
                 <section className="data-view">
-                    <button><span class="material-symbols-outlined">
-                        view_module
-                    </span></button>
-                    <button><span class="material-symbols-outlined">
-                        table
-                    </span></button>
+                    <button><span className="material-symbols-outlined">view_module</span></button>
+                    <button><span className="material-symbols-outlined">table</span></button>
                 </section>
             </section>
 
@@ -83,7 +80,7 @@ function FilteredTable() {
                             <tr key={rowIndex}>
                                 {Object.values(row).map((value, colIndex) => (
                                     <td key={colIndex}>
-                                        {Array.isArray(value) ? value.join(", ") : value}
+                                        {Array.isArray(value) ? value.join(" ") : value}
                                     </td>
                                 ))}
                             </tr>

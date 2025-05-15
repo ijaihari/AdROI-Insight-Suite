@@ -1,6 +1,6 @@
 // components/Tabs.js
 function Tabs({ activeTab, setActiveTab }) {
-    const tabs = ["Components", "Tags", "Metrics"];
+    const tabs = ["Components", "Tags"];
 
     return (
         <div className="tabs">
