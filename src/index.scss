@@ -100,7 +100,7 @@ button {
 
 main {
   min-height: 100vh;
-  margin: 100px 6%;
+  margin: 70px 6%;
 }
 
 //home 
@@ -309,11 +309,6 @@ main {
   }
 }
 
-
-
-
-
-
 // Pricing Section
 .pricing {
   padding: 20px 20px;
@@ -391,7 +386,7 @@ main {
   }
 }
 
-// AOS (Animate on Scroll) Effects (Optional Tweak)
+
 [data-aos] {
   opacity: 0;
   transform: translateY(20px);
@@ -404,8 +399,6 @@ main {
   }
 }
 
-
-
 //console
 
 .filter-section {
@@ -413,6 +406,7 @@ main {
   position: relative;
 
   .filter-container {
+
     padding: 7px 9px;
     border-radius: .6rem;
     background-color: rgba(255, 255, 255, 0.185);
@@ -608,7 +602,8 @@ main {
 
 .table-tools {
   color: #000000e5;
-  margin-top: 1rem;
+  margin-top: 5px;
+  margin-bottom: -10px;
   font-size: 1.3rem;
   font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -744,7 +739,8 @@ td {
 
 
       appearance: none;
-      -webkit-appearance: none;/* 
+      -webkit-appearance: none;
+      /* 
       -moz-appearance: none;
 
       background-image: url("data:image/svg+xml,%3Csvg fill='black' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
@@ -763,7 +759,15 @@ td {
   }
 }
 
-
+.chart-grid {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 
 //footer
 .footer {
