@@ -406,12 +406,14 @@ main {
   position: relative;
 
   .filter-container {
-
+    position: fixed;
     padding: 7px 9px;
     border-radius: .6rem;
     background-color: rgba(255, 255, 255, 0.185);
     border: 1px dotted #8080806e;
+    backdrop-filter: blur(10px);
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+    width: 1340px;
 
     .btn-filter {
       margin: 2.5px 5px 2.5px 2.5px;
@@ -601,17 +603,21 @@ main {
 }
 
 .table-tools {
+  position: fixed;
+  width: 1340px;
+  top: 130px;
   color: #000000e5;
   margin-top: 5px;
   margin-bottom: -10px;
   font-size: 1.3rem;
   font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
-  width: 100%;
+
   padding: 5px 5px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.185);
-  border: 1px dotted #8080803e;
+  border: 1px dotted #8080806e;
+  backdrop-filter: blur(10px);
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
@@ -631,6 +637,7 @@ main {
 }
 
 .table-container {
+  padding-top: 120px;
   font-size: .75rem;
   overflow-x: auto;
 }
@@ -760,7 +767,7 @@ td {
 }
 
 .chart-grid {
- 
+
   display: flex;
   flex-direction: column;
   gap: 3rem;
