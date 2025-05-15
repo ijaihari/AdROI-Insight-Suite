@@ -10,6 +10,7 @@ function MenuList({ activeTab, searchTerm }) {
 
     const tabMap = { Components, Tags, Metrics };
     const data = tabMap[activeTab] || [];
+
     const isComponentTab = activeTab === "Components";
 
     const [selectedComponent, setSelectedComponent] = useState(null);
@@ -28,8 +29,9 @@ function MenuList({ activeTab, searchTerm }) {
         console.log("Dispatching:", payload);
         dispatch(addFilter(payload));
     };
-
+    // Main list 
     const renderMainList = () => {
+        // For Component
         if (isComponentTab) {
             const filteredComponents = data.filter((component) =>
                 component.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -51,18 +53,18 @@ function MenuList({ activeTab, searchTerm }) {
         }
 
         // For Tags and Metrics
-        const filteredItems = data.filter((item) =>
-            item.toLowerCase().includes(searchTerm.toLowerCase())
+        const filteredItems = data.filter((option) =>
+            option.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
         return filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
+            filteredItems.map((option, index) => (
                 <button
                     key={index}
-                    onClick={() => handleAddFilter(activeTab, item)}
+                    onClick={() => handleAddFilter(option, option)}
                     className="menu-items"
                 >
-                    {item}
+                    {option}
                 </button>
             ))
         ) : (
@@ -70,6 +72,8 @@ function MenuList({ activeTab, searchTerm }) {
         );
     };
 
+
+    // Sub List
     const renderSubList = () => {
         const filteredOptions = selectedComponent.options.filter((option) =>
             option.toLowerCase().includes(searchTerm.toLowerCase())

@@ -7,7 +7,7 @@ function Filter() {
 
     const DropStatus = useSelector((state) => state.filter.dropStatus);
     const AddedFilter = useSelector((state) => state.filter.AddedFilter);
-   
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function Filter() {
 
                 {AddedFilter.map((add, index) => (
                     <button key={index} className="btn-filter" onClick={() => { navigate(`/console/filtered/${add.id}`) }}>
-                        {add.value} 
+                        {add.value}
                         <span
                             onClick={() => dispatch(deleteFilter(add))}
                             className="del-filter"
@@ -34,7 +34,7 @@ function Filter() {
                     </button>
 
                 ))}
-                <button className="clear-filter-btn" onClick={() => dispatch(clearAllFilters())}>Clear</button>
+                <button className="clear-filter-btn" onClick={() => { dispatch(clearAllFilters()); navigate(`/console`) }}>Clear</button>
             </section>
 
             {DropStatus && <DropDown />}

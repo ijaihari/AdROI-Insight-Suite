@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { data, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { setDataCount } from "../store/FilterSlice";
-
+const navigate = useNavigate()
 function FilteredTable() {
     const dispatch = useDispatch();
     const { mockData, AddedFilter, dataCount } = useSelector(state => state.filter);
@@ -16,6 +16,7 @@ function FilteredTable() {
     const title = useTableTitle(id);
 
     let filteredData = mockData;
+
     if (AddedFilter.length > 0 && id) {
         const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
         console.log(activeFilter)
@@ -25,6 +26,7 @@ function FilteredTable() {
 
             filteredData = mockData.filter(item => item[componentName] == value);
             console.log(filteredData)
+            navigate(`/filtered/${id}`)
             dispatch(setDataCount(filteredData.length));
         }
         else {
