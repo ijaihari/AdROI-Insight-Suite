@@ -406,7 +406,6 @@ main {
   position: relative;
 
   .filter-container {
-    position: fixed;
     padding: 7px 9px;
     border-radius: .6rem;
     background-color: rgba(255, 255, 255, 0.185);
@@ -603,9 +602,7 @@ main {
 }
 
 .table-tools {
-  position: fixed;
-  width: 1340px;
-  top: 130px;
+  width: 100%;
   color: #000000e5;
   margin-top: 5px;
   margin-bottom: -10px;
@@ -637,7 +634,6 @@ main {
 }
 
 .table-container {
-  padding-top: 120px;
   font-size: .75rem;
   overflow-x: auto;
 }

@@ -220,7 +220,7 @@ function FilteredTable() {
 
       {viewMode === "chart" ? (
         <div className="chart-grid">
-          <div style={{ width: "52%" }}>
+          <div style={{ width: "55%" }}>
             <Radar data={radarData} options={radarOptions} />
           </div>
           <div style={{ width: "70%" }}>
