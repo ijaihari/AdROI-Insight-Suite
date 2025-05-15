@@ -12,7 +12,7 @@ function Home() {
                     with a single intuitive suite.
                 </h1>
                 <p>
-                    An interactive dashboard to visualize, filter, and analyze ad campaign performance metrics.
+                    An interactive console to visualize, filter, and analyze ad campaign performance metrics.
                 </p>
                 <div>
                     <button onClick={() => navigate('/console')}>
@@ -40,7 +40,7 @@ function Home() {
 
                 </div>
                  <section className="preview">
-                    
+
                  </section>
             </section>
 
