@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Console from './components/Console';
 import Home from './components/Home';
 import Document from './components/Document';
-
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -14,6 +14,7 @@ function App() {
       <Header />
 
       <main>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/console" element={<Console />} >

@@ -16,6 +16,17 @@ button {
   cursor: pointer;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+
+}
+
+.logo-img {
+  width: 100px;
+  height: 40px;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;

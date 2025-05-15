@@ -57,7 +57,7 @@ function Home() {
                             <li>Filter & Tag support</li>
                             <li>Email support</li>
                         </ul>
-                        <button>Select</button>
+                        <button onClick={() => navigate('/console')}>Select</button>
                     </div>
                     <div className="pricing-card">
                         <h3>Pro</h3>
