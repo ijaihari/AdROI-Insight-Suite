@@ -3,7 +3,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer__top">
                 <div className="footer__column">
-                    <div className="logo-footer-container"><img className="footer-logo" src="logo\ROAS.svg" alt="" /><h4  className="footer__title">Insight Suite</h4></div>
+                    <div className="logo-footer-container"><img className="footer-logo" src="/logo/ROAS.svg" alt="" /><h4  className="footer__title">Insight Suite</h4></div>
                     <p className="footer__description">
                         A powerful analytics suite built to drive growth, optimize ad spend, and deliver actionable marketing insights.
                     </p>
