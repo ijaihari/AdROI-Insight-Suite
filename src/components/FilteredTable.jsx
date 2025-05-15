@@ -89,7 +89,7 @@ function FilteredTable() {
                     </tbody>
                 </table>
             ) : (
-                <p>No matching data found.</p>
+                <p className="no-data">No matching data found</p>
             )}
         </div>
     );
