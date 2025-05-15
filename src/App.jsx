@@ -3,13 +3,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Console from './components/Console';
 import Home from './components/Home';
-import Document from './components/Document';
+import Document from './components/About';
 import ScrollToTop from "./components/ScrollToTop";
 import Login from './components/Login';
 import Signup from './components/Signup';
-import AddCampaignModal from './components/AdCampaign';
-
-
 
 function App() {
   return (
@@ -23,7 +20,7 @@ function App() {
           <Route path="/console" element={<Console />} >
             <Route path='filtered/:id' element={<Console />} />
           </Route>
-          <Route path='/doc' element={<Document />} />
+          <Route path='/about' element={<Document />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
         </Routes>

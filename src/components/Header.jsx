@@ -9,7 +9,6 @@ function Header() {
                 <section className="nav-tabs">
                     <Link to="/" ><button>Home</button></Link>
                     <Link to="/console" ><button>Console</button></Link>
-                    <Link to="/doc" ><button>Document</button></Link>
                     <Link to="/about" ><button>About</button></Link>
                 </section>
                 <section className="login">
