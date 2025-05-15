@@ -1,42 +1,65 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { setDataCount } from "../store/FilterSlice";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function FilteredTable() {
     const dispatch = useDispatch();
     const { mockData, AddedFilter, dataCount } = useSelector(state => state.filter);
     const { id } = useParams();
 
+    const [sortMetric, setSortMetric] = useState("");
+    const [sortOrder, setSortOrder] = useState("desc");
+
     function useTableTitle(id) {
         const AddedFilter = useSelector((state) => state.filter.AddedFilter);
         const filter = AddedFilter.find((filter) => filter.id === Number(id));
         return filter ? `Filter: ${filter.value} (${dataCount})` : "Insight Table";
     }
+
     const title = useTableTitle(id);
 
-    // Memoize filteredData so it's recalculated only when dependencies change
+   const metricOptions = [
+    "Installs Per Mille (IPM)",
+    "Click Through Rate (CTR)",
+    "Ad Spend (Spend)",
+    "Ad Impressions (Impressions)",
+    "Ad Clicks (Clicks)",
+    "Cost Per Mille (CPM)",
+    "Cost Per Click (CPC)",
+    "Cost Per Install (CPI)",
+    "App Installs (Installs)"
+];
+
+
     const filteredData = useMemo(() => {
+        let result = mockData;
+
         if (AddedFilter.length > 0 && id) {
             const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
-            console.log(activeFilter);
-
             if (activeFilter) {
                 const { componentName, value } = activeFilter;
 
-                return mockData.filter(item => {
+                result = mockData.filter(item => {
                     if (componentName.toLowerCase() === "tags") {
                         return Array.isArray(item.Tags) && item.Tags.includes(value);
                     }
-                   
                     return item[componentName] === value;
                 });
             }
         }
-        return mockData;
-    }, [AddedFilter, id, mockData]);
 
-    // Dispatch setDataCount whenever filteredData changes
+        if (sortMetric) {
+            result = [...result].sort((a, b) => {
+                const aVal = parseFloat(a[sortMetric]) || 0;
+                const bVal = parseFloat(b[sortMetric]) || 0;
+                return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
+            });
+        }
+
+        return result;
+    }, [AddedFilter, id, mockData, sortMetric, sortOrder]);
+
     useEffect(() => {
         dispatch(setDataCount(filteredData.length));
     }, [filteredData, dispatch]);
@@ -45,10 +68,33 @@ function FilteredTable() {
         <div className="table-container">
             <section className="table-tools">
                 <span className="active-filter">{title}</span>
+
+                <div className="toolsgroup">
+                    <section className="sort-controls">
+                    <div className="custom-dropdown sortby">
+                        <label>Sort by</label>
+                        <select value={sortMetric} onChange={(e) => setSortMetric(e.target.value)}>
+                            <option value="">Select Metric</option>
+                            {metricOptions.map((metric) => (
+                                <option key={metric} value={metric}>{metric}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="custom-dropdown sortorder">
+                        <label>Order</label>
+                        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+                            <option value="desc">High to Low</option>
+                            <option value="asc">Low to High</option>
+                        </select>
+                    </div>
+                </section>
+
                 <section className="data-view">
                     <button><span className="material-symbols-outlined">view_module</span></button>
                     <button><span className="material-symbols-outlined">table</span></button>
                 </section>
+                </div>
             </section>
 
             {filteredData.length > 0 ? (
