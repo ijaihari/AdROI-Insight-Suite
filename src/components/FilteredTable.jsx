@@ -3,14 +3,24 @@ import { useParams } from "react-router-dom";
 import { setDataCount } from "../store/FilterSlice";
 import { useEffect, useMemo, useState } from "react";
 import { Radar } from "react-chartjs-2";
-import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend, } from "chart.js";
-import { Bar } from "react-chartjs-2";
-import { BarElement, CategoryScale, LinearScale } from "chart.js";
-
-ChartJS.register(BarElement, CategoryScale, LinearScale);
-
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
 
 ChartJS.register(
+  BarElement,
+  CategoryScale,
+  LinearScale,
   RadialLinearScale,
   PointElement,
   LineElement,
@@ -24,7 +34,7 @@ function FilteredTable() {
   const { mockData, AddedFilter, dataCount } = useSelector((state) => state.filter);
   const { id } = useParams();
 
-  const [sortMetric, setSortMetric] = useState("Impressions");
+  const [sortMetric, setSortMetric] = useState(""); // no default sort selected
   const [sortOrder, setSortOrder] = useState("desc");
   const [viewMode, setViewMode] = useState("table"); // "chart" or "table"
 
@@ -65,10 +75,12 @@ function FilteredTable() {
       }
     }
 
-    if (sortMetric) {
+    const activeMetric = sortMetric || "Impressions";
+
+    if (activeMetric) {
       result = [...result].sort((a, b) => {
-        const aVal = parseFloat(a[sortMetric]) || 0;
-        const bVal = parseFloat(b[sortMetric]) || 0;
+        const aVal = parseFloat(a[activeMetric]) || 0;
+        const bVal = parseFloat(b[activeMetric]) || 0;
         return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
       });
     }
@@ -80,15 +92,17 @@ function FilteredTable() {
     dispatch(setDataCount(filteredData.length));
   }, [filteredData, dispatch]);
 
+  const activeMetric = sortMetric || "Impressions";
+
   // Radar chart data setup
   const radarData = {
     labels: filteredData.map((item) => `${item.campaign}`),
     datasets: [
       {
-        label: sortMetric || "Metric",
-        data: filteredData.map((item) => parseFloat(item[sortMetric]) || 0),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",  // light red fill
-        borderColor: "rgba(255, 99, 132, 1)",         // red border
+        label: activeMetric,
+        data: filteredData.map((item) => parseFloat(item[activeMetric]) || 0),
+        backgroundColor: "rgba(255, 99, 132, 0.2)", // light red fill
+        borderColor: "rgba(255, 99, 132, 1)", // red border
         borderWidth: 2,
         pointBackgroundColor: "rgba(255, 99, 132, 1)", // red points
         pointRadius: 5,
@@ -107,13 +121,13 @@ function FilteredTable() {
             if (!item) return "No data";
 
             return [
-              `Value: ${item?.[sortMetric] ?? "N/A"}`,
+              `Value: ${item?.[activeMetric] ?? "N/A"}`,
               `Campaign: ${item?.campaign ?? "N/A"}`,
               `Ad Network: ${item?.ad_network ?? "N/A"}`,
               `Ad Group: ${item?.Ad_Group ?? "N/A"}`,
-              `Country: ${item?.country ?? "N/A"}`
+              `Country: ${item?.country ?? "N/A"}`,
             ];
-          }
+          },
         },
       },
     },
@@ -130,10 +144,10 @@ function FilteredTable() {
     labels: filteredData.map((item) => `${item.campaign}`),
     datasets: [
       {
-        label: sortMetric || "Metric",
-        data: filteredData.map((item) => parseFloat(item[sortMetric]) || 0),
+        label: activeMetric,
+        data: filteredData.map((item) => parseFloat(item[activeMetric]) || 0),
         backgroundColor: "rgba(59, 130, 246, 0.6)", // Tailwind's blue-500
-        borderColor: "rgba(30, 64, 175, 1)",         // Tailwind's blue-800
+        borderColor: "rgba(30, 64, 175, 1)", // Tailwind's blue-800
         borderWidth: 1,
       },
     ],
@@ -148,15 +162,15 @@ function FilteredTable() {
             const i = context.dataIndex;
             const item = filteredData[i];
             return [
-              `Value: ${item?.[sortMetric] ?? "N/A"}`,
+              `Value: ${item?.[activeMetric] ?? "N/A"}`,
               `Campaign: ${item?.campaign ?? "N/A"}`,
               `Ad Network: ${item?.ad_network ?? "N/A"}`,
               `Ad Group: ${item?.Ad_Group ?? "N/A"}`,
-              `Country: ${item?.country ?? "N/A"}`
+              `Country: ${item?.country ?? "N/A"}`,
             ];
-          }
-        }
-      }
+          },
+        },
+      },
     },
     scales: {
       y: {
@@ -164,7 +178,6 @@ function FilteredTable() {
       },
     },
   };
-
 
   return (
     <div className="table-container">
@@ -205,17 +218,15 @@ function FilteredTable() {
         </div>
       </section>
 
-      {viewMode === "chart" && sortMetric ? (
-        <div className="chart-grid" >
+      {viewMode === "chart" ? (
+        <div className="chart-grid">
+          <div style={{ width: "52%" }}>
+            <Radar data={radarData} options={radarOptions} />
+          </div>
           <div style={{ width: "70%" }}>
             <Bar data={barData} options={barOptions} />
           </div>
-          <div style={{ width: "55%" }}>
-            <Radar data={radarData} options={radarOptions} />
-          </div>
-
         </div>
-
       ) : viewMode === "table" ? (
         filteredData.length > 0 ? (
           <table className="data-table">
