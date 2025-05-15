@@ -23,8 +23,8 @@ button {
 }
 
 .logo-img {
-  width: 100px;
-  height: 40px;
+  height: 35px;
+  margin-right: 5px;
 }
 
 .logo {
@@ -46,7 +46,7 @@ button {
   background-color: #ffffffb6;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(128, 128, 128, 0.225);
-  padding: 10px 0px 10px 5px;
+  padding: 9px 0px 10px 5px;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.059);
 
   a {
@@ -113,7 +113,7 @@ main {
   align-items: center;
 
   .tagline {
-    background-image: linear-gradient(to right bottom, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);
+    background-image: linear-gradient(to right bottom,rgb(12, 24, 131),rgb(79, 108, 201), rgb(141, 71, 221));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -753,6 +753,17 @@ td {
       color: white;
     }
   }
+}
+
+.footer-logo {
+  height: 30px;
+  margin-right: 10px;
+  margin-top: -15px;
+}
+
+.logo-footer-container {
+  display: flex;
+  align-items: center;
 }
 
 .footer__copyright {
