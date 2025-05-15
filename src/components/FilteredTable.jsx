@@ -5,20 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 
 function FilteredTable() {
     const dispatch = useDispatch();
-    const { mockData, AddedFilter, dataCount } = useSelector(state => state.filter);
+    const { mockData, AddedFilter, dataCount } = useSelector((state) => state.filter);
     const { id } = useParams();
 
     const [sortMetric, setSortMetric] = useState("");
     const [sortOrder, setSortOrder] = useState("desc");
 
-    function useTableTitle(id) {
-        const AddedFilter = useSelector((state) => state.filter.AddedFilter);
-        const filter = AddedFilter.find((filter) => filter.id === Number(id));
-        return filter ? `Filter: ${filter.value} (${dataCount})` : "Insight Table";
-    }
-
-    const title = useTableTitle(id);
-
+    // Metric options with full form labels and short-form values
     const metricOptions = [
         { label: "Installs Per Mille (IPM)", value: "IPM" },
         { label: "Click Through Rate (CTR)", value: "CTR" },
@@ -31,17 +24,25 @@ function FilteredTable() {
         { label: "App Installs (Installs)", value: "Installs" }
     ];
 
+    // Title logic for current filter view
+    function useTableTitle(id) {
+        const AddedFilter = useSelector((state) => state.filter.AddedFilter);
+        const filter = AddedFilter.find((filter) => filter.id === Number(id));
+        return filter ? `Filter: ${filter.value} (${dataCount})` : "Insight Table";
+    }
 
+    const title = useTableTitle(id);
 
+    // Memoized filter + sort logic
     const filteredData = useMemo(() => {
         let result = mockData;
 
         if (AddedFilter.length > 0 && id) {
-            const activeFilter = AddedFilter.find(filter => filter.id === Number(id));
+            const activeFilter = AddedFilter.find((filter) => filter.id === Number(id));
             if (activeFilter) {
                 const { componentName, value } = activeFilter;
 
-                result = mockData.filter(item => {
+                result = mockData.filter((item) => {
                     if (componentName.toLowerCase() === "tags") {
                         return Array.isArray(item.Tags) && item.Tags.includes(value);
                     }
@@ -82,7 +83,6 @@ function FilteredTable() {
                                     </option>
                                 ))}
                             </select>
-
                         </div>
 
                         <div className="custom-dropdown sortorder">
@@ -95,8 +95,12 @@ function FilteredTable() {
                     </section>
 
                     <section className="data-view">
-                        <button><span className="material-symbols-outlined">view_module</span></button>
-                        <button><span className="material-symbols-outlined">table</span></button>
+                        <button>
+                            <span className="material-symbols-outlined">view_module</span>
+                        </button>
+                        <button>
+                            <span className="material-symbols-outlined">table</span>
+                        </button>
                     </section>
                 </div>
             </section>
@@ -124,7 +128,6 @@ function FilteredTable() {
                             <th>Installs</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         {filteredData.map((row, rowIndex) => (
                             <tr key={rowIndex}>
