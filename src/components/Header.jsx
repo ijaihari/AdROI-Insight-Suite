@@ -4,7 +4,7 @@ function Header() {
     return (
         <header>
             <nav className="navbar">
-                <Link to="/"><div className="logo-container"><img className="logo-img" src="public/logo/ROAS.svg" alt="" /><h1 className="logo">Insight Suite</h1></div></Link>
+                <Link to="/"><div className="logo-container"><img className="logo-img" src="logo\ROAS.svg" alt="" /><h1 className="logo">Insight Suite</h1></div></Link>
                 <section className="nav-tabs">
                     <Link to="/" ><button>Home</button></Link>
                     <Link to="/console" ><button>Console</button></Link>
