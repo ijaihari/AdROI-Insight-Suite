@@ -39,9 +39,15 @@ function Home() {
                     </article>
 
                 </div>
-                 <section className="preview">
+                <section className="preview1">
 
-                 </section>
+                </section>
+                <section className="preview3">
+
+                </section>
+                <section className="preview2">
+
+                </section>
             </section>
 
             {/* Pricing Section */}
