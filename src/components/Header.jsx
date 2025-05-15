@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+    const navigate = useNavigate();
     return (
         <header>
             <nav className="navbar">
@@ -12,8 +13,8 @@ function Header() {
                     <Link to="/about" ><button>About</button></Link>
                 </section>
                 <section className="login">
-                    <button>Login</button>
-                    <button>Sign Up</button>
+                    <button onClick={() => { navigate('/login') }}>Login</button>
+                    <button onClick={() => { navigate('/signup') }}>Sign Up</button>
                 </section>
             </nav>
         </header>
