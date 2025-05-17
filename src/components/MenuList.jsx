@@ -19,7 +19,7 @@ function MenuList({ activeTab, searchTerm }) {
 
     const handleComponentClick = (component) => setSelectedComponent(component);
 
-    // Now accepts keyName for Components, activeTab for Tags/Metrics
+    //  accepts keyName for Components, activeTab for Tags/Metrics
     const handleAddFilter = (componentName, value) => {
         const payload = {
             componentName,
@@ -29,9 +29,9 @@ function MenuList({ activeTab, searchTerm }) {
         console.log("Dispatching:", payload);
         dispatch(addFilter(payload));
     };
-    // Main list 
+    // main list 
     const renderMainList = () => {
-        // For Component
+        // for Component
         if (isComponentTab) {
             const filteredComponents = data.filter((component) =>
                 component.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -52,7 +52,7 @@ function MenuList({ activeTab, searchTerm }) {
             );
         }
 
-        // For Tags and Metrics
+        // for tags and metrics
         const filteredItems = data.filter((option) =>
             option.toLowerCase().includes(searchTerm.toLowerCase())
         );
@@ -73,7 +73,7 @@ function MenuList({ activeTab, searchTerm }) {
     };
 
 
-    // Sub List
+    // sub List g=for components 
     const renderSubList = () => {
         const filteredOptions = selectedComponent.options.filter((option) =>
             option.toLowerCase().includes(searchTerm.toLowerCase())

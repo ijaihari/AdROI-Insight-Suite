@@ -10,7 +10,6 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add sign up logic here
     navigate("/console");
   };
 
@@ -23,7 +22,7 @@ function Signup() {
             type="name"
             placeholder="Name"
             value={name}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             required
           />
           <input

@@ -34,9 +34,9 @@ function FilteredTable() {
   const { mockData, AddedFilter, dataCount } = useSelector((state) => state.filter);
   const { id } = useParams();
 
-  const [sortMetric, setSortMetric] = useState(""); // no default sort selected
+  const [sortMetric, setSortMetric] = useState(""); 
   const [sortOrder, setSortOrder] = useState("desc");
-  const [viewMode, setViewMode] = useState("table"); // "chart" or "table"
+  const [viewMode, setViewMode] = useState("table"); 
 
   const metricOptions = [
     { label: "Installs Per Mille (IPM)", value: "IPM" },
@@ -101,10 +101,10 @@ function FilteredTable() {
       {
         label: activeMetric,
         data: filteredData.map((item) => parseFloat(item[activeMetric]) || 0),
-        backgroundColor: "rgba(255, 99, 132, 0.2)", // light red fill
-        borderColor: "rgba(255, 99, 132, 1)", // red border
+        backgroundColor: "rgba(255, 99, 132, 0.2)", 
+        borderColor: "rgba(255, 99, 132, 1)", 
         borderWidth: 2,
-        pointBackgroundColor: "rgba(255, 99, 132, 1)", // red points
+        pointBackgroundColor: "rgba(255, 99, 132, 1)", 
         pointRadius: 5,
       },
     ],
@@ -146,8 +146,8 @@ function FilteredTable() {
       {
         label: activeMetric,
         data: filteredData.map((item) => parseFloat(item[activeMetric]) || 0),
-        backgroundColor: "rgba(59, 130, 246, 0.6)", // Tailwind's blue-500
-        borderColor: "rgba(30, 64, 175, 1)", // Tailwind's blue-800
+        backgroundColor: "rgba(59, 130, 246, 0.6)", 
+        borderColor: "rgba(30, 64, 175, 1)", 
         borderWidth: 1,
       },
     ],
